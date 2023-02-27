@@ -38,28 +38,29 @@ const MovieCard = () => {
         </div>
     )
    }
+   if (!randomMovie) {
+    return <div>Loading</div>
+   }
+
   return (
     <div>
         <div className="movie">
             <div>
-                <p>{randomMovie.release_date}</p>
+                <p>{randomMovie.overview}</p>
             </div>
             <div>
                 <img src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`} alt={randomMovie.Title} />
             </div>
             <div>
-                <span>{randomMovie.id}</span>
+                {randomMovie.release_date && <span>{randomMovie.release_date.slice(0,4)}</span>}
                 <h3>{randomMovie.title}</h3>
             </div>
         </div>
         <div>
                 <button onClick={handleDisike}>Dislike</button>
                 <button onClick={handleLike}>Like</button>
-            </div>
-            <div>
-                <h2>Liked: {likedMovies.length > 0 ? likedMovies.map((movie) => movie.title) : 'no liked movies'}</h2>
-                <h2>Disliked: {dislikedMovies.length > 0 ? dislikedMovies.map((movie) => movie.title) : 'no disliked movies'}</h2>    
-            </div>
+         </div>
+            
     </div>
   )
 }

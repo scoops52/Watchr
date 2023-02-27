@@ -4,7 +4,7 @@ import movies from '../movies'
 
 const initialState = {
     movies: [],
-    randomMovie: [],
+    randomMovie: {},
     likedMovies: [],
     dislikedMovies: [],
     status: 'idle',
