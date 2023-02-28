@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import movies from '../movies'
+
 
 const initialState = {
     movies: [],
     randomMovie: {},
-    likedMovies: [],
+    // likedMovies: [],
     dislikedMovies: [],
+    // userOneSubmitted: false,
     status: 'idle',
     error: null
 };
@@ -29,9 +30,9 @@ const moviesListSlice = createSlice({
             const randomIndex = Math.floor(Math.random() * state.movies.length);
             state.randomMovie = state.movies[randomIndex];
         },
-        likeMovie: (state, action ) => {
-            state.likedMovies.push(action.payload)
-        },
+        // likeMovie: (state, action ) => {
+        //     state.likedMovies.push(action.payload)
+        // },
         removeMovie: (state, action) => {
             const movieId = action.payload;
             state.movies = state.movies.filter((movie) => movie.id !== movieId)
@@ -39,6 +40,10 @@ const moviesListSlice = createSlice({
         dislikeMovie: (state, action ) => {
             state.dislikedMovies.push(action.payload)
         },
+        // userOneSubmit: (state, action ) => {
+        //     state.userOneSubmitted = true;
+        // }
+
     },
     extraReducers: (builder) => {
         builder
@@ -59,6 +64,6 @@ const moviesListSlice = createSlice({
 
 });
 
-export const { getRandomMovie, likeMovie, dislikeMovie, removeMovie } = moviesListSlice.actions;
+export const { getRandomMovie, likeMovie, dislikeMovie, removeMovie, userOneSubmit } = moviesListSlice.actions;
 
 export default moviesListSlice.reducer;

@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getRandomMovie, likeMovie, dislikeMovie, removeMovie } from '../features/moviesListSlice';
+import { getRandomMovie, dislikeMovie, removeMovie, userOneSubmit } from '../features/moviesListSlice';
+import { likeMovie, renderUserTwo } from '../features/userTwoSlice';
+
 
 
 
@@ -7,7 +9,9 @@ import { getRandomMovie, likeMovie, dislikeMovie, removeMovie } from '../feature
 import React, { useEffect, useState } from 'react';
 
 const MovieCard = () => {
-    const { movies, randomMovie, likedMovies, dislikedMovies } = useSelector((state) => state.moviesList);
+    const { movies, randomMovie, dislikedMovies } = useSelector((state) => state.moviesList);
+    const { nameOne, nameTwo } = useSelector((state) => state.params);
+    const { likedMovies } = useSelector((state) => state.userTwo)
     const dispatch = useDispatch();
    
    useEffect(() => {
@@ -24,17 +28,20 @@ const MovieCard = () => {
 
   const handleDisike = (e) => {
     dispatch(dislikeMovie(randomMovie));
-    dispatch(removeMovie(randomMovie.id)).then(() => {
-        dispatch(getRandomMovie(movies));
-  });
-}
+    dispatch(removeMovie(randomMovie.id));
+  };
+
+
+  const handleUserTwoStart = (e) => {
+    dispatch(renderUserTwo())
+  };
+
    if (movies.length === 0) {
     return (
         <div>
             <h2>No Movies Left</h2>
-            <h2>Liked: {likedMovies.length > 0 ? likedMovies.map((movie) => movie.title) : 'no liked movies'}</h2>
-            <hr/>
-            <h2>Disliked: {dislikedMovies.length > 0 ? dislikedMovies.map((movie) => movie.title) : 'no disliked movies'}</h2>
+            <h3>{nameTwo}'s turn.</h3>
+            <button onClick={handleUserTwoStart}>Get Movies</button>
         </div>
     )
    }

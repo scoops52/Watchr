@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setName, setGenre, submitParams, } from '../features/paramSlice';
+import { setNameOne, setNameTwo, setGenre, submitParams, } from '../features/paramSlice';
 import { getRandomMovie, getMovies } from '../features/moviesListSlice';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,14 +10,14 @@ import { faMasksTheater, faGhost, faHeart, faVideoCamera, faPeopleRoof, faRocket
 
 
 const SetParams = () => {
-    const { name, genreId, paramsSubmitted } = useSelector((state) => state.params)
+    const { nameOne, nameTwo, genreId, paramsSubmitted } = useSelector((state) => state.params)
     const [selectedGenreId, setSelectedGenreId] = useState('')
    
     const dispatch = useDispatch();
     const selectGenreId = useSelector((state) => state.params.genreId);
 
     const handleName = (e) => {
-        dispatch(setName(e.target.value))
+        dispatch(setNameOne(e.target.value))
     };
     
     const handleGenre = async (e) => {
@@ -130,14 +130,14 @@ const SetParams = () => {
 
             </div>
         <button onClick={handleParams}>Get Movies</button>
-        <h2>Name: {name}</h2>
+        <h2>Name: {nameOne}</h2>
         
     </div>
   );
 }
 return (
     <div>
-        <h2>{name}'s Movies:</h2>
+        <h2>{nameOne}'s Movies:</h2>
     </div>
 )
 
