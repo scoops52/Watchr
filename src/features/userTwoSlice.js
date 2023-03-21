@@ -6,6 +6,7 @@ const initialState = {
     randomLikedMovie: {},
     userTwoLikedMovies: [],
     matchedMovies: [],
+    isMatchedMoviesRendered: false,
     
 };
 
@@ -36,10 +37,12 @@ const userTwoSlice = createSlice({
             const movieId = action.payload;
             state.likedMovies = state.likedMovies.filter((movie) => movie.id !== movieId)
         },
-        
-        
+        renderMatchedMovies: (state) => {
+            state.isMatchedMoviesRendered = true
+        },
+        resetUserTwo: () => initialState
     }
 });
 
-export const { renderUserTwo, getRandomLikedMovie, likeMovie, matchMovie, removeMovieFromLiked} = userTwoSlice.actions
+export const { renderUserTwo, getRandomLikedMovie, likeMovie, matchMovie, removeMovieFromLiked, renderMatchedMovies, resetUserTwo} = userTwoSlice.actions
 export default userTwoSlice.reducer

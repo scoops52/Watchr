@@ -1,0 +1,129 @@
+.container {
+    display: inline-block;
+    width: 300px;
+    background-color: rgba(244, 244, 244, 0.5);
+      
+}
+
+.selectedGenre {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: 1px ridge #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.chevrons {
+    display: flex;
+    flex-direction: column;
+    width: 1rem;
+    height: .75rem;
+}
+
+.selecting {
+    color: #ccc;
+
+    .chevrons {
+        color: #ccc;
+    }
+}
+
+
+.dropdownOptions {
+    position: absolute;
+    z-index: 999;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 4px;
+    width: 300px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: rgb(244, 244, 244, 0.5);
+    
+
+    div {
+        padding: 0.5rem;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            svg {
+                position: relative;
+                bottom: -10px;
+                animation: movedown 0.75s ease 0.1s forwards;
+            }
+        }
+
+        svg {
+            margin-right: 0.75rem;
+        }
+    }
+}
+
+@keyframes moveup {
+    0% {
+      bottom: -25px;
+      opacity: 0;
+    }
+    100% {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes movedown {
+    0% {
+      top: -25px;
+      opacity: 0;
+    }
+    100% {
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+.action:hover {
+    background-color: #f48024;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+}
+
+.comedy:hover {
+    background-color: #ea4c89;
+    color: #fff;
+}
+
+.documentary:hover {
+    background-color: #0057ff;
+    color: #fff;
+}
+
+.family:hover {
+    background-color: #e9c46a;
+    color: #fff;
+}
+
+.fantasy:hover {
+    background-color: #7b2cbf;
+    color: #fff;
+}
+
+.horror:hover {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.romance:hover {
+    background-color: #c33235;
+    color: #fff;
+}
+
+
+.scienceFiction:hover {
+    background-color: #006400;
+    color: #fff;
+    border-radius: 0px 0px 4px 4px;
+}

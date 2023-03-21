@@ -26,8 +26,9 @@ const paramSlice = createSlice({
         submitParams: (state) => {
             state.paramsSubmitted = true
         },
+        resetParams: () => initialState
     },
 });
 
-export const { setNameOne, setNameTwo, setGenre, submitParams } = paramSlice.actions;
+export const { setNameOne, setNameTwo, setGenre, submitParams, resetParams } = paramSlice.actions;
 export default paramSlice.reducer;

@@ -9,7 +9,8 @@ const initialState = {
     dislikedMovies: [],
     // userOneSubmitted: false,
     status: 'idle',
-    error: null
+    error: null,
+    renderRoundOne: false
 };
 
 export const getMovies = createAsyncThunk(
@@ -40,10 +41,10 @@ const moviesListSlice = createSlice({
         dislikeMovie: (state, action ) => {
             state.dislikedMovies.push(action.payload)
         },
-        // userOneSubmit: (state, action ) => {
-        //     state.userOneSubmitted = true;
-        // }
-
+        toggleRoundOne: (state, action) => {
+            state.renderRoundOne = !state.renderRoundOne
+        },
+        resetMovies: () => initialState
     },
     extraReducers: (builder) => {
         builder
@@ -64,6 +65,6 @@ const moviesListSlice = createSlice({
 
 });
 
-export const { getRandomMovie, likeMovie, dislikeMovie, removeMovie, userOneSubmit } = moviesListSlice.actions;
+export const { getRandomMovie, likeMovie, dislikeMovie, removeMovie, userOneSubmit, toggleRoundOne, resetMovies } = moviesListSlice.actions;
 
 export default moviesListSlice.reducer;
