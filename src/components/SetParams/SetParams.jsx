@@ -1,6 +1,6 @@
 import React from 'react';
 import SetParamsStyles from './SetParams.module.scss';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setNameOne, setNameTwo, submitParams, } from '../../features/paramSlice';
 import { toggleRoundOne } from '../../features/moviesListSlice';
 import GenreSelector from './GenreSelector/GenreSelector';
