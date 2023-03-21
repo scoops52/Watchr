@@ -1,7 +1,7 @@
 import React from 'react';
 import SetParamsStyles from './SetParams.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { setNameOne, setNameTwo, setGenre, submitParams, } from '../../features/paramSlice';
+import { setNameOne, setNameTwo, submitParams, } from '../../features/paramSlice';
 import { toggleRoundOne } from '../../features/moviesListSlice';
 import GenreSelector from './GenreSelector/GenreSelector';
 import Button from '../Button/Button';
@@ -11,7 +11,6 @@ import Button from '../Button/Button';
 
 const SetParams = () => {
   const dispatch = useDispatch();
-  const selectGenreId = useSelector((state) => state.params.genreId);
 
   const handleNameOne = (e) => {
     dispatch(setNameOne(e.target.value))

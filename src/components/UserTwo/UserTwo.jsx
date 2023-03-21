@@ -1,7 +1,7 @@
 import React from 'react';
 import UserTwoStyles from './UserTwo.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { getRandomLikedMovie, likeMovie, matchMovie, removeMovieFromLiked, renderMatchedMovies } from '../../features/userTwoSlice';
+import { getRandomLikedMovie, likeMovie, removeMovieFromLiked, renderMatchedMovies } from '../../features/userTwoSlice';
 import { openModal } from '../../features/matchModalSlice';
 import { useEffect } from 'react';
 import Button from '../Button/Button';
@@ -18,7 +18,7 @@ const UserTwo = () => {
         if (likedMovies.length > 0) {
             dispatch(getRandomLikedMovie(likedMovies));
         }
-    }, [likedMovies])
+    }, [dispatch, likedMovies])
 
 
 
@@ -36,7 +36,7 @@ const UserTwo = () => {
         if (matchedMovies.length > 0) {
             dispatch(openModal());
         }
-    }, [matchedMovies])
+    }, [dispatch, matchedMovies])
 
     const handleMatchedMovies = (e) => dispatch(renderMatchedMovies());
 

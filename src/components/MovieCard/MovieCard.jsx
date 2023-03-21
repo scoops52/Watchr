@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getRandomMovie, dislikeMovie, removeMovie, userOneSubmit, toggleRoundOne } from '../../features/moviesListSlice';
+import { getRandomMovie, dislikeMovie, removeMovie } from '../../features/moviesListSlice';
 import { likeMovie } from '../../features/userTwoSlice';
 import MovieCardStyles from './MovieCard.module.scss';
 
@@ -21,7 +21,7 @@ const MovieCard = () => {
     if (movies.length > 0) {
         dispatch(getRandomMovie(movies))
     }
-   },[movies])
+   },[dispatch, movies])
 
    const handleLike = (e) => {
     dispatch(likeMovie(randomMovie));
