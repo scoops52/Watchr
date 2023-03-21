@@ -1,3 +1,31 @@
+# Final Deployed Build
+[Link](https://boisterous-nasturtium-93deed.netlify.app/)
+
+# Why I made this Project
+
+I wanted to make a complex app that could be used in a real world situation. I also wanted to build something that I had not seen done before. This way I was challenged and forced to problem solve while learning a lot of front-end practices, and honing my skills. 
+
+The most important thing to me while building the app however was making it user friendly. I built it while always having the user in mind in order for it to be as simple and helpful for the user as possible. 
+
+# How I built this project
+
+I built this projec in React, making use of redux-toolkit. There were a lot of components and many were reused throughout the app.  There were also a lot of states being updated frequently and shared across the whole app. Redux's state management really helped with keep everything organized and easy to debug. The Chrome Extension Redux Dev Tools helped a lot throughout the project. 
+I used an api from The Movie DataBase. To test my endpoints and make sure I could set the right parameters, I used Postman. 
+For my styling orgaization, I used a CSS Module approach. With a lot of components, I wanted to keep the styles for many components seperate to eliminate any bugs.  
+
+# Some key code features
+Slice with complex features [Example Code](https://github.com/scoops52/Watchr/blob/482716d884ac44351f26519bccd38e006ec7422d/src/features/moviesListSlice.js)
+
+Component making use of Redux Toolkit's state management [Example Code](https://github.com/scoops52/Watchr/blob/482716d884ac44351f26519bccd38e006ec7422d/src/components/UserTwo/UserTwo.jsx)
+
+Component reused throughout app [Example Code](https://github.com/scoops52/Watchr/blob/482716d884ac44351f26519bccd38e006ec7422d/src/components/SharedMovieCard/SharedMovieCard.jsx)
+
+# What I would do better next time:
+
+I would planned out the app more thouroughly in advance. I had planned out how I wanted the user flow to be, and the logic needed. However the design elements needed was not planned out as much. Planning out the process more would have made the file structure better, as well as eliminated some redudant code. 
+
+I learned a lot from building this project however, and am excited to take what I have learned into my next project. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
