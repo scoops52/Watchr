@@ -2,7 +2,6 @@ import React from 'react';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import RoundOneStyles from './RoundOne.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import background from '../../assets/878.jpg';
 import { toggleRoundOne } from '../../features/moviesListSlice';
 import Button from '../../components/Button/Button';
 import { openWarningModal } from '../../features/warningModalSlice';
@@ -10,7 +9,6 @@ import { openWarningModal } from '../../features/warningModalSlice';
 
 const RoundOne = () => {
     const { nameOne } = useSelector((state) => state.params);
-    const { backgroundImage } = useSelector((state) => state.background.backgroundImage);
     const { movies } = useSelector((state) => state.moviesList);
     const { likedMovies } = useSelector((state) => state.userTwo)
     const dispatch = useDispatch();

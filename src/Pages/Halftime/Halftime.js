@@ -3,7 +3,6 @@ import HalftimeStyles from './Halftime.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { renderUserTwo } from '../../features/userTwoSlice';
 import Button from '../../components/Button/Button';
-import ResetButton from '../../components/ResetButton/ResetButton';
 
 const Halftime = () => {
     const { nameTwo, nameOne } = useSelector((state) => state.params);

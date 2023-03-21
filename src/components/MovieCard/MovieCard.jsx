@@ -49,18 +49,6 @@ const MovieCard = () => {
             Hover over each movie for more info.
         </p>
         <SharedMovieCard movieOrigin={randomMovie} styleSheet={MovieCardStyles} />
-        {/* <div className={MovieCardStyles.movie}>
-            <div className={MovieCardStyles.overview}>
-                <p>{randomMovie.overview}</p>
-            </div>
-            <div className={MovieCardStyles.poster}>
-                <img src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`} alt={randomMovie.Title} />
-            </div>
-            <div className={MovieCardStyles.title}>
-                {randomMovie.release_date && <span>{randomMovie.release_date.slice(0,4)}</span>}
-                <h3>{randomMovie.title}</h3>
-            </div>
-        </div> */}
         <div className={MovieCardStyles.buttons}>
                 <Button btnText="Dislike" onClick={handleDislike} color='red'/>
                 <Button btnText="Like" onClick={handleLike} color='green'/>
@@ -74,16 +62,3 @@ const MovieCard = () => {
 
 export default MovieCard
 
-
-
-// const [movie, setMovie] = useState({})
-//    const { movies } = useSelector((state) => state.moviesList);
-//    const getMovie = (movies) => {
-//     return movies[Math.floor(Math.random() * 3)];
-//    };
-   
-//    useEffect(() => {
-//     setMovie(getMovie(movies));
-//     console.log(movie);
-//     },
-//     [movies]);
