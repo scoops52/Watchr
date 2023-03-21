@@ -29,10 +29,6 @@ const userTwoSlice = createSlice({
                 state.likedMovies.push(action.payload);
             }
         },
-        // matchMovie: (state, action) => {
-        //     state.matchedMovies.push(action.payload);
-            
-        // },
         removeMovieFromLiked: (state, action) => {
             const movieId = action.payload;
             state.likedMovies = state.likedMovies.filter((movie) => movie.id !== movieId)

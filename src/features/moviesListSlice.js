@@ -5,9 +5,7 @@ import axios from "axios";
 const initialState = {
     movies: [],
     randomMovie: {},
-    // likedMovies: [],
     dislikedMovies: [],
-    // userOneSubmitted: false,
     status: 'idle',
     error: null,
     renderRoundOne: false
@@ -27,13 +25,10 @@ const moviesListSlice = createSlice({
     name: 'moviesList',
     initialState,
     reducers: {
-        getRandomMovie: (state, action ) => {
+        getRandomMovie: (state) => {
             const randomIndex = Math.floor(Math.random() * state.movies.length);
             state.randomMovie = state.movies[randomIndex];
         },
-        // likeMovie: (state, action ) => {
-        //     state.likedMovies.push(action.payload)
-        // },
         removeMovie: (state, action) => {
             const movieId = action.payload;
             state.movies = state.movies.filter((movie) => movie.id !== movieId)
@@ -41,7 +36,7 @@ const moviesListSlice = createSlice({
         dislikeMovie: (state, action ) => {
             state.dislikedMovies.push(action.payload)
         },
-        toggleRoundOne: (state, action) => {
+        toggleRoundOne: (state) => {
             state.renderRoundOne = !state.renderRoundOne
         },
         resetMovies: () => initialState
